@@ -6,22 +6,34 @@
 # Description: A command-line chat application using Qt framework.
 # ========================================
 
-CONFIG += c++17 cmdline
+AUTHOR = "Mohamed Ashraf"
+EMAIL = "mohamed.ashraf@coretech-innovations.com"
+
+message("====================================================")
+message("Author: " $$AUTHOR)
+message("Email: " $$EMAIL)
+
+message("====================================================")
+message("====================================================")
+message("Current directory: " $$PWD)
+message("====================================================")
+
+CONFIG += \
+        c++17 \
+        cmdline \ 
+        ordered # Common for client/server apps
+
+TEMPLATE = subdirs
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-# The sources to include
-SOURCES += \
-        main.cpp
-# The headers to include
-HEADERS += \
-        chatapp.h
-# The modules to include
-QT += \
-        core 
-        network
+# The sub-directories to include
+SUBDIRS += \
+    cti_client \
+    cti_server 
+#     common
 
 TRANSLATIONS += \
     cti-chat-app_en_CA.ts
