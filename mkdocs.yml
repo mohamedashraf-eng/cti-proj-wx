@@ -1,14 +1,19 @@
+# Project Information
 site_name: CTI Project - Wx
-site_url: https://github.com/mohamedashraf-eng/cti-proj-wx
+site_url: https://mohamedashraf-eng.github.io/cti-proj-wx/
+repo_name: mohamedashraf-eng/cti-proj-wx
+repo_url: https://github.com/mohamedashraf-eng/cti-proj-wx
+edit_uri: edit/main/docs/
 
+# Configuration
 theme:
   name: material
-  # Optional customizations:
   language: en
   logo: assets/logo.png
   favicon: assets/favicon.ico
+  
+  # Color Palette (Light/Dark Toggle)
   palette: 
-    # Light/Dark mode toggle
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: indigo
@@ -24,9 +29,52 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
 
+  # UI Features
   features:
-    - navigation.tabs      # Top-level menu as tabs
-    - navigation.sections  # Grouped sidebar items
-    - navigation.expand    # Sidebar starts expanded
-    - search.suggest       # Search bar suggestions
-    - content.code.copy    # Add a copy button to code blocks
+    - navigation.instant      # Faster page loads
+    - navigation.tracking     # URL updates as you scroll
+    - navigation.tabs         # Top menu tabs
+    - navigation.sections     # Grouped sidebar items
+    - navigation.expand       # Sidebar starts expanded
+    - navigation.top          # Back to top button
+    - toc.integrate           # TOC inside the left sidebar
+    - search.suggest          # Search suggestions
+    - search.highlight        # Highlight search terms
+    - content.code.copy       # Copy button for code blocks
+    - content.tabs.link       # Sync tabs across pages
+
+# Navigation Structure
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: setup/install.md
+      - Configuration: setup/config.md
+  - User Guides:
+      - Advanced Usage: guides/advanced.md
+  - GitHub: https://github.com/mohamedashraf-eng/cti-proj-wx
+
+# Plugins (Requires: pip install mkdocs-minify-plugin mkdocs-git-revision-date-localized-plugin)
+plugins:
+  - search
+  - minify:
+      minify_html: true
+  - git-revision-date-localized:
+      type: date
+
+# Markdown Extensions (Enhanced for Technical Docs)
+markdown_extensions:
+  - admonition                # Callout blocks (!!! note)
+  - footnotes                 # [^1] support
+  - tables                    # Standard tables
+  - attr_list                 # Add CSS classes to elements
+  - md_in_html                # Wrap markdown in HTML tags
+  - pymdownx.details          # Collapsible blocks (??? note)
+  - pymdownx.superfences      # Nested code blocks
+  - pymdownx.highlight:       # Syntax highlighting
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite     # Inline code highlighting
+  - pymdownx.snippets         # Include other files in markdown
+  - pymdownx.tabbed:          # Content tabs
+      alternate_style: true
