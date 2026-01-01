@@ -47,6 +47,7 @@ theme:
 nav:
   - Home: index.md
   - Getting Started:
+      - Overview: getting-started/overview.md
       - Installation: setup/install.md
       - Configuration: setup/config.md
   - User Guides:
