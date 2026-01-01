@@ -1,0 +1,32 @@
+site_name: CTI Project - Wx
+site_url: https://github.com/mohamedashraf-eng/cti-proj-wx
+
+theme:
+  name: material
+  # Optional customizations:
+  language: en
+  logo: assets/logo.png
+  favicon: assets/favicon.ico
+  palette: 
+    # Light/Dark mode toggle
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  features:
+    - navigation.tabs      # Top-level menu as tabs
+    - navigation.sections  # Grouped sidebar items
+    - navigation.expand    # Sidebar starts expanded
+    - search.suggest       # Search bar suggestions
+    - content.code.copy    # Add a copy button to code blocks
