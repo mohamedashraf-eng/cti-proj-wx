@@ -20,9 +20,10 @@ message("====================================================")
 
 CONFIG += \
         c++17 \
-        cmdline \ 
+        warn_on \
         ordered # Common for client/server apps
-
+        
+# This project contains a subdirectories projects.
 TEMPLATE = subdirs
 
 # You can make your code fail to compile if it uses deprecated APIs.
@@ -35,6 +36,7 @@ SUBDIRS += \
     cti_server 
 #     common
 
+# OTHER SETTINGS
 TRANSLATIONS += \
     cti-chat-app_en_CA.ts
 CONFIG += lrelease

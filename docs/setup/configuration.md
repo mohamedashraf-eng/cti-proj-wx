@@ -55,3 +55,23 @@ Once the build completes, an executable binary will be created in the build fold
 
 !!! success "Success"
     If there are no compilation errors, your Qt Console application will now execute in the terminal.
+
+## Folder structure explained
+
+```bash
+cti-chat-app/
+├── cti-chat-app.pro        (Top-level project file)
+├── common/                 (Shared logic: Message types, Packet parsing)
+│   ├── common.pri          (Shared include file)
+├── cti_client/
+│   ├── cti_client.pro      (Client-specific settings)
+│   ├── main.cpp
+└── cti_server/
+    ├── cti_server.pro      (Server-specific settings)
+    ├── main.cpp
+```  
+
+- `cti-chat-app/`: The root directory of the project and it contains the global files to the project and scripts.
+- `common/`: Contains the shared logic and configuration between other sub - directories.
+- `cti_client`: The client logic and configuration for the chat application.
+- `cti_server`: The server logic and configuration for the chat application.

@@ -50,6 +50,7 @@ nav:
       - Overview: getting-started/overview.md
       - System Architecture: getting-started/system_archi.md
       - System Flowchart: getting-started/system_flowchart.md
+      - Kick Start: getting-started/basic_qt.md
       - Installation: setup/install.md
       - Configuration: setup/config.md
   - User Guides:

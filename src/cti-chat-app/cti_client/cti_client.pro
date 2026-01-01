@@ -13,6 +13,7 @@ QT += \
 	network
 
 TARGET = cti_client
+# Standalone executable application.
 TEMPLATE = app
 
 # Include the shared logic
