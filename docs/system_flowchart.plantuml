@@ -1,0 +1,54 @@
+@startuml
+title Server Command Processing Flow
+
+start
+:Client sends Plain Text/JSON Command;
+:Server **QTcpSocket** triggers **readyRead()**;
+
+partition "Parsing Layer" {
+    if (Input starts with '{'?) then (yes)
+        :Parse JSON to String Command;
+    else (no)
+        :Read Plain Text line;
+    endif
+    :Extract Command & Arguments;
+}
+
+partition "Security & Auth Layer" {
+    if (Is Authenticated?) then (no)
+        if (Command == AUTH?) then (yes)
+            :Process Credentials;
+        else (no)
+            :Set Response: **ERROR 401 UNAUTHORIZED**;
+            goto end_flow
+        endif
+    else (yes)
+        :Continue;
+    endif
+
+    if (Filename contains ".." OR Absolute Path?) then (yes)
+        :Set Response: **ERROR 403 FORBIDDEN**;
+        goto end_flow
+    else (no)
+        :Resolve to Safe Local Path;
+    endif
+}
+
+partition "Execution Layer (Command Pattern)" {
+    :CommandFactory creates Object;
+    :Execute via **ICommand::execute()**;
+    
+    if (File Operation Success?) then (yes)
+        :Set Response: **OK**;
+        if (Command is READ/LIST/INFO?) then (yes)
+            :Append Payload/Metadata;
+        endif
+    else (no)
+        :Set Response: **ERROR 404/500/409**;
+    endif
+}
+
+label end_flow
+:Send Response to Client;
+stop
+@enduml

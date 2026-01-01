@@ -48,6 +48,8 @@ nav:
   - Home: index.md
   - Getting Started:
       - Overview: getting-started/overview.md
+      - System Architecture: getting-started/system_archi.md
+      - System Flowchart: getting-started/system_flowchart.md
       - Installation: setup/install.md
       - Configuration: setup/config.md
   - User Guides:
