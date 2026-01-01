@@ -1,5 +1,7 @@
 # Client-Server Chat & File Management System
 
+!!! Author: Mohamed Ashraf (mohamed.ashraf@coretech-innovations.com)
+
 ## 1. Project Overview
 A robust TCP-based system for remote file management and administrative communication. The system follows a strict request-response protocol over a multithreaded, event-driven architecture.
 
