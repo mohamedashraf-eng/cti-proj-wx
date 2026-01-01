@@ -9,15 +9,21 @@
 message("====================================================")
 message("Current directory: " $$PWD)
 
-QT += \
-	core
-	network
+# Include the shared logic
+include(../common/common.pri)
+
+CONFIG(debug, debug|release) {
+    TARGET = cti_server_d
+# 	QT += console
+} else {
+    TARGET = cti_server
+}
+
+# QT += \
+# 	core
 
 TARGET = cti_server
 TEMPLATE = app
-
-# Include the shared logic
-include(../common/common.pri)
 
 SOURCES += \
 	main.cpp

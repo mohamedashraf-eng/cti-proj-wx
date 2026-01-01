@@ -12,17 +12,16 @@ EMAIL = "mohamed.ashraf@coretech-innovations.com"
 message("====================================================")
 message("Author: " $$AUTHOR)
 message("Email: " $$EMAIL)
-
-message("====================================================")
 message("====================================================")
 message("Current directory: " $$PWD)
+message("The active configuration is: " $$CONFIG)
 message("====================================================")
 
 CONFIG += \
         c++17 \
         warn_on \
-        ordered # Common for client/server apps
-        
+        ordered 
+
 # This project contains a subdirectories projects.
 TEMPLATE = subdirs
 

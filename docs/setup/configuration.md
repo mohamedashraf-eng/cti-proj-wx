@@ -61,6 +61,7 @@ Once the build completes, an executable binary will be created in the build fold
 ```bash
 cti-chat-app/
 ├── cti-chat-app.pro        (Top-level project file)
+├── .qmake.conf             (Top-level project configurations)
 ├── common/                 (Shared logic: Message types, Packet parsing)
 │   ├── common.pri          (Shared include file)
 ├── cti_client/
@@ -75,3 +76,14 @@ cti-chat-app/
 - `common/`: Contains the shared logic and configuration between other sub - directories.
 - `cti_client`: The client logic and configuration for the chat application.
 - `cti_server`: The server logic and configuration for the chat application.
+
+You can build the project from `build/`  
+
+```bash
+qmake ..
+make
+```  
+  
+! note that `-r` for recursive and it is required for debug mode.
+
+This will build the project in debug mode and now you can access your available modules inside the project and `make` and run them separatly.
