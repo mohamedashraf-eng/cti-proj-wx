@@ -1,29 +1,57 @@
 # Qt Project Configuration
 
-## Creating a QT Console Application
+!!! Author: Mohamed Ashraf (mohamed.ashraf@coretech-innovations.com)
 
-First run the qtcreator app command from terminal  
+
+This guide covers the creation and compilation of a **Qt Console Application** using Qt Creator and the terminal.
+
+## Creating a Project via Qt Creator GUI
+
+To begin, launch Qt Creator from your terminal:
 
 ```bash
 qtcreator
-```  
+```
 
-This will open a GUI follow the following steps to get started: 
+Follow these steps within the GUI to initialize your project:
 
-1. After this go to `Create Project`.
-![Create Project](../assets/create_project.png)
-2. Select `Application (Qt)` -> `Qt Console Application`.
-![Qt Console Application](../assets/qt_console_app.png)
-3. Enter the `project name` and `project location directory`.  
-![Project Name and Location](../assets/proj_dir.png)
-4. Select build system `qmake`.
-![Build System](../assets/build_sys.png)
-5. Select the translation `as you want`.
-![Translation](../assets/trans.png)
-6. Select the project kits.
-![Kits](../assets/kits.png)
-7. Select the version control framework as `git`.
-![SVN](../assets/svn.png)
+1.  **New Project**: Click on **Create Project**.
+2.  **Project Type**: Select **Application (Qt)** → **Qt Console Application**.
+3.  **Location**: Enter your **Project Name** and select the **Project Location**.
+4.  **Build System**: Select **qmake** as the build tool.
+5.  **Translation**: Select a translation file if needed (otherwise, click **Next**).
+6.  **Kits**: Select the appropriate Desktop kits for your system.
+7.  **Version Control**: Select **Git** as the version control framework.
 
-After this you will find the generated code ready at the location selected earlier, and project is ready to work.
-![Generated code](../assets/generated.png)
+Once finished, Qt Creator will generate the boilerplate code and a `.pro` file in your selected directory.
+
+---
+
+## Compiling and Running via Terminal
+
+After generating the project, you can compile and run it manually using the terminal. It is best practice to use a "shadow build" directory to keep your source folder clean.
+
+### 1. Generate the Makefile
+Navigate to your project's source directory and create a build folder:
+
+```bash
+mkdir build && cd build
+qmake ..
+```
+
+### 2. Compile the Code
+Use the `make` command to compile. We use `-j$(nproc)` to utilize all available CPU cores for a faster build:
+
+```bash
+make -j$(nproc)
+```
+
+### 3. Run the Application
+Once the build completes, an executable binary will be created in the build folder. Run it by referencing its name (usually the same as your project name):
+
+```bash
+./YourProjectName
+```
+
+!!! success "Success"
+    If there are no compilation errors, your Qt Console application will now execute in the terminal.
