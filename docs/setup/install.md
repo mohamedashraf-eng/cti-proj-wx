@@ -35,6 +35,6 @@ You can find the automation installing script at `scripts/setup_qt.sh`
 
 ```bash
 cd ./scripts 
-chmod +x ./setup_qt.sh sudo 
+chmod +x ./setup_qt.sh 
 sudo ./setup_qt.sh
 ```  
