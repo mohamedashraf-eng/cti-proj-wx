@@ -26,10 +26,10 @@ TARGET = cti_client
 TEMPLATE = app
 
 SOURCES += \
-	main.cpp
+	main.cpp \
 
 # HEADERS += \
-# 	clientwindow.h
+# 	chat_client.hpp \ 
 
 message("Source files: " $$SOURCES)
 message("Include paths: " $$INCLUDEPATH)

@@ -8,17 +8,17 @@
 */
 // Qt Depends
 #include <QCoreApplication>
-#include <QLocale>
-#include <QTranslator>
+#include <QSocketNotifier>
 // Std Depends
 #include <iostream>
 // Other Depends
+#include "error_emitter.hpp"
+
+// using namespace CTI::Chat; 
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-
-    std::cout << "Hello QT\n";
 
     return a.exec();
 }
