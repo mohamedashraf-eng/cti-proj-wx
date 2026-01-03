@@ -6,3 +6,4 @@ Coretech Innovation Project
 
 ## About this project
 
+Simple chat server application.
