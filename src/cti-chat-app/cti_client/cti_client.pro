@@ -28,8 +28,8 @@ TEMPLATE = app
 SOURCES += \
 	main.cpp \
 
-# HEADERS += \
-# 	chat_client.hpp \ 
+HEADERS += \
+	Client.hpp \ 
 
 message("Source files: " $$SOURCES)
 message("Include paths: " $$INCLUDEPATH)

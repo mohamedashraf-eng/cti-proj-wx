@@ -8,17 +8,26 @@
 */
 // Qt Depends
 #include <QCoreApplication>
-#include <QSocketNotifier>
 // Std Depends
 #include <iostream>
+#include <memory>
 // Other Depends
 #include "error_emitter.hpp"
+#include "constants.hpp" 
+#include "Client.hpp"
 
-// using namespace CTI::Chat; 
+using namespace CTI::Chat; 
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     QCoreApplication a(argc, argv);
 
-    return a.exec();
+    std::shared_ptr<Client> client = std::make_shared<Client>();
+
+    client->startConnection(
+        Constants::DEFAULT_HOST, 
+        Constants::DEFAULT_PORT);
+    
+    // client->startMessageListener();
+
+    return a.exec();    
 }
