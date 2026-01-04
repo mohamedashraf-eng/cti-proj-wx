@@ -79,6 +79,9 @@ int main(int argc, char *argv[]) {
         return -1;
     }
 
+    EMIT_INFO() << "Server is listening on port " 
+                << Constants::DEFAULT_PORT;
+
     // Step 5: Start the blocking event loop
     // This allows the server to process signals/slots for networking and threading.
     return app.exec();
