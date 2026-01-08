@@ -53,6 +53,12 @@ void SessionManager::remove(IClientSession* session) {
     EMIT_DEBUG() << "Removing session.";
     
     // Step 2: Locate and remove the specific pointer using std::remove
+    // remove takes start -> end and searches for element and delete it.
+    // [A, B, X, C, X] -> [A, B, C, -, -] / and retruns pointer (iterator)
+    // to the first deleted element.
+    // erase takes start and end and erases a range.
+    // erase[first delete element, end]
+    // O(n)
     m_sessions.erase(
         std::remove(m_sessions.begin(), m_sessions.end(), session),
         m_sessions.end()
